@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGenie — AI Learning Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="brand">EduGenie <span>🧠</span></div>
+      <p>Google Gemini powered learning assistant</p>
+      <div class="badges">
+        <span>FastAPI</span>
+        <span>Gemini</span>
+        <span>Student-first</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="task-tabs" role="tablist" aria-label="EduGenie tasks">
+        <button class="task-tab active" data-task="qa">Ask a Question</button>
+        <button class="task-tab" data-task="explain">Explain</button>
+        <button class="task-tab" data-task="quiz">Generate Quiz</button>
+        <button class="task-tab" data-task="summarize">Summarize</button>
+        <button class="task-tab" data-task="learn">Learning Path</button>
+      </div>
+
+      <form id="task-form">
+        <div id="qa-fields" class="task-fields">
+          <label for="qa-input">Your question</label>
+          <textarea id="qa-input" placeholder="e.g. What is the largest ocean on Earth?"></textarea>
+        </div>
+
+        <div id="explain-fields" class="task-fields hidden">
+          <label for="explain-input">Topic</label>
+          <input id="explain-input" type="text" placeholder="e.g. Photosynthesis" />
+        </div>
+
+        <div id="quiz-fields" class="task-fields hidden">
+          <label for="quiz-input">Topic or study passage</label>
+          <textarea id="quiz-input" placeholder="Paste a passage or describe the topic for the quiz..."></textarea>
+        </div>
+
+        <div id="summarize-fields" class="task-fields hidden">
+          <label for="summary-input">Passage</label>
+          <textarea id="summary-input" placeholder="Paste the educational passage you want to summarize..."></textarea>
+        </div>
+
+        <div id="learn-fields" class="task-fields hidden">
+          <label for="learn-input">Topic</label>
+          <input id="learn-input" type="text" placeholder="e.g. SQL" />
+          <label for="level-input">Current level</label>
+          <select id="level-input">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+
+        <button id="submit-button" class="primary" type="submit">Get Answer</button>
+      </form>
+
+      <div id="status" class="status hidden"></div>
+      <section id="result" class="result hidden"></section>
+    </section>
+
+    <footer>
+      EduGenie is an educational assistant. Verify important academic or factual information.
+    </footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
